@@ -46,5 +46,5 @@ tidy_data <-cbind(all_subj, tidy_data)
 
 # create table with means for each activity and variable
 temp_table <-tidy_data[,-(1:2)]
-final_table<-aggregate(temp_table, list(tidy_data$subject,tidy_data$activity), mean)
-write.table(final_table,"final_table.txt",sep = "\t", row.names = FALSE)
+meandatatable<-aggregate(temp_table, list(tidy_data$subject,tidy_data$activity), mean)
+write.table(meandatatable,"final_table.txt",sep = "\t", row.names = FALSE)
